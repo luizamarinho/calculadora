@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <style>
+      .titulo {
+        background-color: beige;
+        color: blueviolet;
+        padding: 15px 25px;
+        text-align: center;
+      }
+      .alinhamento {
+        text-align: center;
+      }
+      /* .action {
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="alinhamento">
+      <h1 class="titulo">Calculadora Simples</h1>
+      <input class="valor_1" placeholder="Digite o primeiro valor" />
+      <br />
+      <br />
+      <input class="valor_2" placeholder="Digite o segundo valor" />
+      <br />
+      <br />
+      <div class="action">
+        <button type="button" onclick="operacao_soma()">+</button>
+        <button type="button" onclick="operacao_sub()">-</button>
+        <br />
+        <button type="button" onclick="operacao_mult()">*</button>
+        <button type="button" onclick="operacao_div()">/</button>
+
+        <br />
+        <br />
+      </div>
+      <input class="resultado" placeholder="Resultado" />
+
+      <script>
+        let elemento_result = document.querySelector('.resultado');
+        let elemento = document.querySelector('.valor_1');
+        let elemento2 = document.querySelector('.valor_2');
+
+        let operacao_soma = () => {
+          let soma = parseFloat(elemento.value) + parseFloat(elemento2.value);
+          console.log(soma);
+          elemento_result.value = soma.toString();
+        };
+
+        let operacao_sub = () => {
+          let sub = parseFloat(elemento.value) - parseFloat(elemento2.value);
+          console.log(sub);
+          elemento_result.value = sub.toString();
+        };
+
+        let operacao_mult = () => {
+          let mult = parseFloat(elemento.value) * parseFloat(elemento2.value);
+          console.log(mult);
+          elemento_result.value = mult.toString();
+        };
+
+        let operacao_div = () => {
+          let div = parseFloat(elemento.value) / parseFloat(elemento2.value);
+          console.log(div);
+          elemento_result.value = div.toString();
+        };
+      </script>
+    </div>
+  </body>
+</html>
